@@ -1,6 +1,14 @@
 # Run packer
 
-```ini
+init
+
+```sh
+cd packer/rhel && packer init .
+```
+
+Kör
+
+```sh
 cd packer/rhel && packer build -var-file=variables.pkrvars.hcl .
 ```
 
