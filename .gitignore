@@ -1,0 +1,2 @@
+packer/rhel/files/*.iso
+packer/rhel/*pkrvars.hcl
