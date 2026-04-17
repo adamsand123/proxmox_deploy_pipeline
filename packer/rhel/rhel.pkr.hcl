@@ -108,6 +108,7 @@ source "proxmox-iso" "rhel" {
   network_adapters {
     model  = "virtio"
     bridge = var.network_bridge
+    vlan_tag = 202
   }
 
   # Boot automation (Kickstart)
@@ -143,18 +144,6 @@ build {
   sources = ["source.proxmox-iso.rhel"]
 
   provisioner "shell" {
-    script = "scripts/01-base.sh"
-  }
-
-  provisioner "shell" {
-    script = "scripts/02-cloud-init.sh"
-  }
-
-  provisioner "shell" {
-    script = "scripts/03-hardening.sh"
-  }
-
-  provisioner "shell" {
-    script = "scripts/cleanup.sh"
+    script = "scripts/post.sh"
   }
 }
