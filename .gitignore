@@ -3,3 +3,6 @@ packer/rhel/*pkrvars.hcl
 oemdrv.iso
 run_tf.sh
 terraform/variables*
+terraform/.terraform*
+terraform/terraform.tfstate*
+terraform/terraform-plugin-proxmox.log
