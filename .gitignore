@@ -1,3 +1,5 @@
 packer/rhel/files/*.iso
 packer/rhel/*pkrvars.hcl
 oemdrv.iso
+run_tf.sh
+terraform/variables*
