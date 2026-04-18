@@ -101,7 +101,7 @@ source "proxmox-iso" "rhel" {
 
   disks {
     type         = "scsi"
-    disk_size    = "32G"
+    disk_size    = "12G"
     storage_pool = var.storage_pool
   }
 

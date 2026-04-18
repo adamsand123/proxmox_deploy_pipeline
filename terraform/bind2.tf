@@ -15,9 +15,9 @@ resource "proxmox_vm_qemu" "bind2" {
   vm_state            = "running"
 
   bios                = "seabios"
-  memory              = 4096
+  memory              = 2048
   cpu {
-    cores             = 4
+    cores             = 1
     sockets           = 1
     type              = "x86-64-v3"
   }
@@ -48,7 +48,7 @@ resource "proxmox_vm_qemu" "bind2" {
       scsi0 {
         disk {
           storage     = "local-zfs"
-          size        = "30G" 
+          size        = "32G" 
         }
       }
     }

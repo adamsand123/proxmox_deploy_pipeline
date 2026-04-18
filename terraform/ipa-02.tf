@@ -1,14 +1,14 @@
-resource "proxmox_vm_qemu" "ipa01" {
+resource "proxmox_vm_qemu" "ipa-02" {
   target_node         = var.PM_node
-  name                = "ipa01"
-  vmid                = 206
+  name                = "ipa-02"
+  vmid                = 207
   clone               = var.PM_template
 
   os_type             = "cloud-init"
   ciuser              = var.CI_user
   cipassword          = var.CI_pass
-  nameserver          = "192.168.2.54"
-  ipconfig0           = "ip=192.168.2.49/29,gw=192.168.2.54"
+  nameserver          = "192.168.2.62"
+  ipconfig0           = "ip=192.168.2.57/29,gw=192.168.2.62"
 
   agent               = 0
   start_at_node_boot  = true
@@ -17,7 +17,7 @@ resource "proxmox_vm_qemu" "ipa01" {
   bios                = "seabios"
   memory              = 4096
   cpu {
-    cores             = 4
+    cores             = 2
     sockets           = 1
     type              = "x86-64-v3"
   }
@@ -25,7 +25,7 @@ resource "proxmox_vm_qemu" "ipa01" {
   network {
     id                = 0
     bridge            = "vmbr0"
-    tag               = 206
+    tag               = 207
     firewall          = false
     link_down         = false
     model             = "virtio"
@@ -48,7 +48,7 @@ resource "proxmox_vm_qemu" "ipa01" {
       scsi0 {
         disk {
           storage     = "local-zfs"
-          size        = "30G" 
+          size        = "50G" 
         }
       }
     }

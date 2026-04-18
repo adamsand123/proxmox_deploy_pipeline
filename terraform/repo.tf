@@ -1,6 +1,6 @@
-resource "proxmox_vm_qemu" "repo" {
+resource "proxmox_vm_qemu" "repo01" {
   target_node         = var.PM_node
-  name                = "repo"
+  name                = "repo01"
   vmid                = 203
   clone               = var.PM_template
 
@@ -15,9 +15,9 @@ resource "proxmox_vm_qemu" "repo" {
   vm_state            = "running"
 
   bios                = "seabios"
-  memory              = 4096
+  memory              = 2048
   cpu {
-    cores             = 4
+    cores             = 1
     sockets           = 1
     type              = "x86-64-v3"
   }

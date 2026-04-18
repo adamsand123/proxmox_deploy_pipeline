@@ -8,16 +8,16 @@ resource "proxmox_vm_qemu" "bind1" {
   ciuser              = var.CI_user
   cipassword          = var.CI_pass
   nameserver          = "192.168.2.38"
-  ipconfig0           = "ip=192.168.2.33/29,gw=192.168.2.38"
+  ipconfig0           = "ip=192.168.2.30/29,gw=192.168.2.38"
 
   agent               = 0
   start_at_node_boot  = true
   vm_state            = "running"
 
   bios                = "seabios"
-  memory              = 4096
+  memory              = 2048
   cpu {
-    cores             = 4
+    cores             = 1
     sockets           = 1
     type              = "x86-64-v3"
   }
@@ -48,7 +48,7 @@ resource "proxmox_vm_qemu" "bind1" {
       scsi0 {
         disk {
           storage     = "local-zfs"
-          size        = "30G"
+          size        = "32G" 
         }
       }
     }
