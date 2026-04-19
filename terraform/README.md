@@ -1,5 +1,15 @@
 # Terraform
 
+Create terraform user and permission in proxmox
+
+```sh
+pveum role add TerraformProv -privs "Datastore.AllocateSpace Datastore.AllocateTemplate Datastore.Audit Pool.Allocate Pool.Audit Sys.Audit Sys.Console Sys.Modify VM.Allocate VM.Audit VM.Clone VM.Config.CDROM VM.Config.Cloudinit VM.Config.CPU VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Migrate VM.PowerMgmt SDN.Use"
+pveum aclmod / -user terraform-prov@pve -role TerraformProv
+pveum user token add terraform-prov@pve mytoken
+```
+
+Create API token 
+
 Deklarera variabler i: `variables.tf`.
 
 ```sh
