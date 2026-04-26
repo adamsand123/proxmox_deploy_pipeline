@@ -1,0 +1,5 @@
+---
+- name: Expand disks
+  hosts: rhel10
+  roles:
+    - expand_disks

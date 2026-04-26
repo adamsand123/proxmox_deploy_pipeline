@@ -8,3 +8,5 @@ terraform/variables*
 terraform/terraform-plugin-proxmox.log
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+ansible/.ansible_become_password
+ansible/.vault_password

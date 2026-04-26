@@ -48,7 +48,7 @@ resource "proxmox_vm_qemu" "repo01" {
       scsi0 {
         disk {
           storage     = "local-zfs"
-          size        = "50G" 
+          size        = "100G" 
         }
       }
     }
